@@ -3,6 +3,45 @@ var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var less = require('gulp-less-sourcemap');
 var ghPages = require('gulp-gh-pages');
+var clean = require('gulp-clean');
+
+var bases = {
+ app: '/',
+ dist: 'dist/',
+};
+
+var paths = {
+ scripts: ['assets/js/*.js'],
+ libs: ['assets/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js'],
+ styles: ['assets/css/*.css'],
+ html: ['index.html'],
+ extras: ['favicon.ico']
+};
+
+// Delete the dist directory
+gulp.task('clean', function() {
+ return gulp.src(bases.dist)
+ .pipe(clean());
+});
+
+// Copy all other files to dist directly
+gulp.task('copy', ['clean'], function() {
+  // Copy html
+  gulp.src(paths.html, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist));
+
+ // Copy javascripts
+  gulp.src(paths.scripts, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist + 'assets/js'));
+
+  // Copy styles
+  gulp.src(paths.styles, {cwd: bases.app})
+  .pipe(gulp.dest(bases.dist + 'assets/css'));
+
+  // Copy lib scripts, maintaining the original directory structure
+  gulp.src(paths.libs, {cwd: '/**'})
+  .pipe(gulp.dest(bases.dist));
+});
 
 // Static Server
 gulp.task('serve', function() {
@@ -51,3 +90,4 @@ gulp.task('deploy', function() {
 gulp.task('default', ['sass', 'serve']);
 gulp.task('server', ['serve']);
 gulp.task('dev', ['watch']);
+gulp.task('create-dist', ['clean', 'copy']);
