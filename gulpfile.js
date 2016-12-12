@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var less = require('gulp-less-sourcemap');
+var ghPages = require('gulp-gh-pages');
 
 // Static Server
 gulp.task('serve', function() {
@@ -40,7 +41,13 @@ gulp.task('less', function() {
     .pipe(browserSync.stream());
 });
 
+// Deploy pahe to github pages
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
 
-gulp.task('default', ['serve']);
+
+gulp.task('default', ['sass', 'serve']);
 gulp.task('server', ['serve']);
 gulp.task('dev', ['watch']);
