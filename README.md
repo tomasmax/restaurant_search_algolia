@@ -4,6 +4,7 @@ I used npm, gulp, bootstrap and instantsearch.js by Algolia to develop a restaur
 
 ## Local Setup
 Having npm installed, type in your terminal:
+
 1. `npm install`
 2. `gulp sass`
 3. `gulp`
