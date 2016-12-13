@@ -1,0 +1,145 @@
+Question 1: Hi there, I'd like to build an autocomplete search like on https://glose.com/bookstore. How can I build that kind of search using my PHP backend? Looking forward to hearing from you soon. Cheers, Jason
+
+Hi Jason,
+
+Sure. The easiest way to render an autocomplete dropdown menu is to use our autocomplete.js JavaScript library. It provides an out of the box autocomplete menu that can be easily configured and integrated with Algolia's realtime search engine.
+
+You can see a great example about multi category autocomplete search here: https://www.algolia.com/doc/guides/search/auto-complete/
+
+You can find great examples about implementing a multi category autocomplete search in the previous link.
+
+You should look in the section with the following title:
+
+#Multi-Category User Interface
+
+There you can see an example where the autocomplete dropdows is populated with multiple categories.
+
+Before being able to search using Algolia, you'll need to push your data to our servers using one of our API clients.
+
+Importing data into Algolia and keeping it up to date is simple. Nonetheless, there are some steps to take to make sure the process is efficient and effective. So let's go through them! 
+
+You can see the documentation here:
+
+https://www.algolia.com/doc/guides/indexing/import-synchronize-data/php/
+#Importing Through the API
+
+Let me know if tou need anything more.
+
+Thanks.
+
+Question 2: Hey We currently use swiftype. I'd like to learn what the main differences with respect to that. Thanks. Hugo.
+
+Hi Hugo,
+
+Nice to hear from you.
+
+The main difference between swiftype and algolia search engines is the algolia API replies in few milliseconds and we have datacenters all around the world to improve the response time.
+
+In the question “What are the best search engines for web applications?” in www.slant.com Algolia is ranked 4th while Swiftype is ranked 5th. You can see the ranking here: https://www.slant.co/topics/95/~search-engines-for-web-applications
+
+Listed below you can find some of the Pros of Algolia, endorsed by the community:
+
+- Algolia is Very fast and reliable
+  API replies in few milliseconds and we have datacenters all around the world.
+
+- As a hosted service it reduces required maintenance work
+
+- We offer a free Hacker Plan: with 10K records and 100K monthly operations
+
+- We have an unique ranking formula that combining full-text & business relevance
+
+- Search-as-you-type is built-in
+  Designed to natively search for prefixes (enables auto-complete menu search OOTB).
+
+- Very easy to configure
+  The configuration is based on tie breaks which makes reasoning about the search easier.
+
+- Optimized UX for autocomplete and find-as-you-type results
+
+- 100% customizable
+
+- Language-agnostic & typo tolerance
+  Algolia's engine has been built in such a way that you can index and search any language, or even several languages at the same time. The engine is also typo tolerant, and will allow for up to two typos in each words of the search query.
+  This typo tolerance feature is also language agnostic, as it relies on optimized data structures and "fuzzy" tree traversals (implementing a Damarau-Levenshtein distance algorithm) instead of using dictionaries.
+
+  If we take a look at swiftype's github account https://github.com/swiftype and algolia's github account https://github.com/algolia you can notice our account repositories have much more stars than swiftype ones and we are much more actives. As an example you can see two of our more succesful projects https://github.com/algolia/instantsearch.js and https://github.com/algolia/places , really active opensource projects and with a lot of contribution from the community.
+
+  For us the community is really important, we believe in opensource strategies and because of that we have a huge community growing every day. You can see the difference between our community page https://community.algolia.com/ and swiftype's community page https://community.swiftype.com/ 
+
+One last thing to take into account is the pricing, swiftype starts with a $300/month plan while ours plans start at $49/month.
+
+We can schedule a call or meet in person at your convenience, I can show you live examples and give you any further detail you would need.
+
+Thanks.
+
+
+Search engines ranking
+https://www.slant.co/topics/95/~search-engines-for-web-applications
+
+
+Question 3: Hello. Sorry to give you the kind of feedback that I know you do not want to hear, but I really hate the new design. Clearing and deleting indexes are now several clicks away. I am needing to use these features while iterating, so this is inconvenient. Also it would be great to access exporting Analytics data to a CSV or to access them via an API. Regards, Matt
+
+Hi Matt,
+
+So sorry to hear that. 
+
+I am going to share your feedback with the team and we will do all our best to improve those details to improve user experience.
+
+In the meanwhile I am seding you some documentation that could help you:
+
+Analytics overview https://www.algolia.com/doc/guides/analytics/analytics-overview/ . You can export analytics data to a CSV accesing to your analytics dashboard https://www.algolia.com/analytics and clicking over "DOWNLOAD", which you can under "Top Searches" and "Top Searches returning" sections.
+
+Analytics API documentation https://www.algolia.com/doc/rest-api/analytics/ The Analytics API allows you to analyze your query logs and gather all the analytics data through our analytics API endpoint.
+
+Cheers.
+
+Thanks.
+
+FYI: I searched in Google "algolia analytics csv export" https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=algolia%20analytics%20csv%20export and the first link from the results is a 404 Error https://www.algolia.com/doc/faq/toubleshooting/export-index-data
+
+Question 4: Hi, we are looking at Algolia as an option to replace our CloudSearch. After looking at your pricing and documentation, I have a few questions about pricing and search
+
+We have three domains right now that contain different data. Would we be able to use a single Algolia account with different endpoints for each of those domains? For example, if we have fewer than 1M documents across the three domains, can we use a single Growth account?
+
+We have a staging environment that also has three domains. The size of our data in the staging environment is fairly close to production to test performance in a realistic way. Queries per second is obviously much, much lower. What is the pricing for a non-production environment?
+
+Does filtering on facets restrict the documents returned or the facets returned?
+
+If the answer to 3 is documents, can we filter on facets using ranges? Or alternatively, can we provide arrays for faceted attributes where we can return the document if any of the values in the array match the filter (similar to querying against array fields in MongoDB)? As an example scenario, we have categories containing sub-categories which contain products. When in the parent category, we need to be able to search products in all of its sub-categories. In the sub-categories, we need to be able to search products in only that sub-category. Let me know if anything is unclear. It looks like a great product so I'm excited to hear back!
+
+Answer:
+
+Hi,
+
+Find my responses below your questions:
+
+We have three domains right now that contain different data. Would we be able to use a single Algolia account with different endpoints for each of those domains? For example, if we have fewer than 1M documents across the three domains, can we use a single Growth account?
+
+For all our plans, there is no domain limitation. You can use Algolia from as many domains as you want. You can also use the same account and indices for your website and mobile applications.
+
+Sure if you don't have more than 1M records the GROWTH plan is okay and yes you can use a single account.
+
+We have a staging environment that also has three domains. The size of our data in the staging environment is fairly close to production to test performance in a realistic way. Queries per second is obviously much, much lower. What is the pricing for a non-production environment?
+
+Unfortunately no. To provide the same performance/features on a non-production environment, we need to use the same hardware setup. We recommend to use the same account and application for all environments, and generate a new set of indices and API keys.
+
+For example, you can have the indices dev_products, staging_products and prod_products. Then, you can generate API Keys for each environment by limiting their access to indices having the prefix 'dev_*', 'staging_*' and 'prod_*'. If you want to minimize the impact on pricing, we recommend to only index a subset (10%? or 1%?) of your records in your non-production environments.
+
+Does filtering on facets restrict the documents returned or the facets returned?
+
+Filtering on facets restrict the documents returned. You can customize the max value per Facet. You can see the documentation about filtering-faceting https://www.algolia.com/doc/guides/search/filtering-faceting/ and there is a paramterer called maxValuesPerFacet.
+
+If the answer to 3 is documents, can we filter on facets using ranges? Or alternatively, can we provide arrays for faceted attributes where we can return the document if any of the values in the array match the filter (similar to querying against array fields in MongoDB)? As an example scenario, we have categories containing sub-categories which contain products. When in the parent category, we need to be able to search products in all of its sub-categories. In the sub-categories, we need to be able to search products in only that sub-category. Let me know if anything is unclear. It looks like a great product so I'm excited to hear back!
+
+Sure you can add multiple values to a facets filter. The most common use case for faceted search or navigation is to select at most one value per facet, but there are at least two ways from which a user might select multiple values from the same facet:
+
+Conjunctive "AND" selection.
+
+Disjunctive "OR" selection. Selecting hotel ratings (e.g., hotels with 4 OR 5 stars) may be a kind of disjunctive selection. Checkboxes are usually used to represent such navigation capabilities.
+
+You can see the documentation here: https://www.algolia.com/doc/guides/search/filtering-faceting/#filtering--navigation
+
+So for sure with algolia you can manage your example escenario, here it is a demo where you can filter the product by parent category or by sub category https://community.algolia.com/instantsearch.js/examples/e-commerce/
+
+
+

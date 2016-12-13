@@ -2,6 +2,12 @@ This is the solution to the hiring assignment for the Solutions team at Algolia.
 
 I used npm, gulp, bootstrap and instantsearch.js by Algolia to develop a restaurant search demo.
 
+In order to create `final_restaurants.json` file mixing all the data from `restaurants_list.json` and `restaurants_info.csv` I implemented a Ruby script.
+
+If you want to run the script you need to have ruby 2.3.2 installed and run in `resources/dataset/` folder
+
+`ruby mix_data.rb` 
+
 ## Local Setup
 Having npm installed, type in your terminal:
 
